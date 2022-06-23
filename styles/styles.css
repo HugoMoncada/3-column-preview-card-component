@@ -1,0 +1,155 @@
+:root{
+    /* ### Primary */
+    --Bright-orange: hsl(31, 77%, 52%);;
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --Paragraphs: hsla(0, 0%, 100%, 0.75);
+    /* background, headings, buttons */
+    --Very-light-gray: hsl(0, 0%, 95%);
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    background-color: var(--Very-light-gray);
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+.container{
+    width: 80%;
+ 
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "sedans"
+                         "suvs"
+                         "luxury";
+    align-self: center;
+}
+
+.sedans, .suvs, .luxury{
+    padding: 3rem 3rem;
+}
+
+.title{
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    color: var(--Very-light-gray);
+    font-size: 25px;
+}
+
+.description{
+    color: var(--Paragraphs);
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.sedans{
+    grid-area: sedans;
+    background-color: var(--Bright-orange);
+}
+
+.suvs{
+    grid-area: suvs;
+    background-color: var(--Dark-cyan);
+}
+
+.luxury{
+    grid-area: luxury;
+    background-color: var(--Very-dark-cyan);
+}
+
+button{
+    background-color: var(--Very-light-gray);
+    padding: 11px 30px;
+    border-radius: 18px;
+    border: 0;
+    font-family: 'Lexend Deca', sans-serif;
+    box-sizing: border-box;
+}
+
+.sedans button{
+    color: var(--Bright-orange);
+}
+
+.sedans button:hover, .sedans button:active {
+    background-color: var(--Bright-orange);
+    border: 1px solid var(--Very-light-gray);
+    color: var(--Very-light-gray);
+}
+
+.suvs button{
+    color: var(--Dark-cyan);
+}
+
+.suvs button:hover, .suvs button:active {
+    background-color: var(--Dark-cyan);
+    border: 1px solid var(--Very-light-gray);
+    color: var(--Very-light-gray);
+}
+
+.luxury button{
+    color: var(--Very-dark-cyan);
+}
+
+.luxury button:hover, .luxury button:active {
+    background-color: var(--Very-dark-cyan);
+    border: 1px solid var(--Very-light-gray);
+    color: var(--Very-light-gray);
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 900px) {
+
+    body{
+        height: 100vh;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        height: 100%;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "sedans suvs luxury";
+        align-self: center;
+    }
+
+    .description{
+        margin-bottom: 100px;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .container{
+        width: 60%;
+    }
+
+}
+
+
+@media only screen and (min-width: 1600px) {
+    .container{
+        width: 50%;
+    }
+
+}
